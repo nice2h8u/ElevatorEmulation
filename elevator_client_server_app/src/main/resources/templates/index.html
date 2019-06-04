@@ -5,22 +5,23 @@
     <title>Elevator</title>
 </head>
 <body>
+<div  style="display: table; margin: 300px 150px 150px 600px; text-align: center;">
+    <form action="#" th:action="@{/}" th:object="${commandDTO}" method="post">
+        <div class="col-md-3 form-group">
+            <label>Выберите команду:</label>
+            <select class="form-control" name="state">
+                <option th:each="command : ${commands}"
+                        th:value="${command.state}"
 
-<form action="#" th:action="@{/}" th:object="${commandDTO}" method="post">
-    <div class="col-md-3 form-group">
-        <label>UOM:</label>
-        <select class="form-control" name="state">
-            <option th:each="command : ${commands}"
-                    th:value="${command.state}"
+                        th:text="${command.state}">Each
+                </option>
+            </select>
+        </div>
 
-                    th:text="${command.state}">Each</option>
-        </select>
-    </div>
+        <p><input type="submit" value="Отправить команду"/></p>
+    </form>
 
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-</form>
-
-<p th:text="'content: ' + ${status}" />
-
+    <p th:text="'Статус лифта: ' + ${status}"/>
+</div>
 </body>
 </html>

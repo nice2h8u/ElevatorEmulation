@@ -9,7 +9,7 @@ public class Closing extends ElevatorState {
 
     @Override
     public String toString() {
-        return "Лифт приехал на" +
+        return "Лифт покидает " +
                 currentFloor.num() +
                 " этаж, двери закрываются!";
     }

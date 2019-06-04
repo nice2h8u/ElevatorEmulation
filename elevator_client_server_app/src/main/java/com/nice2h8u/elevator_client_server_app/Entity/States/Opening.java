@@ -8,7 +8,7 @@ public class Opening extends ElevatorState {
     }
 
     public String toString() {
-        return "Лифт приехал на" +
+        return "Лифт приехал на " +
                 currentFloor.num() +
                 " этаж, двери открываются!";
     }
